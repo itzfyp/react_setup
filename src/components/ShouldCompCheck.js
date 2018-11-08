@@ -1,7 +1,9 @@
 import React from "react";
-export default class ShouldCompCheck extends React.Component {
+import PropTypes from "prop-types";
+
+class ShouldCompCheck extends React.Component {
   state = {
-    val: this.props.count
+    val: this.props.count.val
   };
 
   static getDerivedStateFromProps(props, state) {
@@ -15,7 +17,7 @@ export default class ShouldCompCheck extends React.Component {
     return true;
   }
 
-  static getSnapshotBeforeUpdate(prevProps, prevState) {
+  getSnapshotBeforeUpdate(prevProps, prevState) {
     /*   if (prevProps.list.length < this.props.list.length) {
       const list = this.listRef.current;
       return list.scrollHeight - list.scrollTop;
@@ -36,6 +38,7 @@ export default class ShouldCompCheck extends React.Component {
   };
 
   render() {
+    this.props.nodeT.map(r => console.log('ee', r));
     return (
       <>
         <input
@@ -57,3 +60,24 @@ export default class ShouldCompCheck extends React.Component {
     console.log("called At inital Render ShouldCompCheck DidMount");
   }
 }
+
+ShouldCompCheck.propTypes = {
+  count: PropTypes.objectOf(PropTypes.number),
+  data: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]).isRequired,
+  nodeT : PropTypes.node,
+  elem : PropTypes.element.isRequired
+}
+
+ShouldCompCheck.defaultProps = {
+  count: {val:0},
+  data: 'welcome'
+}
+
+
+
+
+
+export default ShouldCompCheck;

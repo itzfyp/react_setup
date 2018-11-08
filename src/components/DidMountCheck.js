@@ -1,9 +1,13 @@
 import React from "react";
 import ShouldCompCheck from "./ShouldCompCheck";
+import Header from "./Header";
 
 export default class DidMountCheck extends React.Component {
   state = {
-    currentTime: 1
+    currentTime: {
+      val: 0
+    },
+    data : ''
   };
 
   unSubscribeInterval = null;
@@ -11,7 +15,9 @@ export default class DidMountCheck extends React.Component {
   updateTimeCount = () => {
     console.error(this.state.currentTime);
     this.setState({
-      currentTime: this.state.currentTime + 1
+      currentTime: {
+        val: this.state.currentTime.val + 1
+      }
     });
   };
 
@@ -24,9 +30,9 @@ export default class DidMountCheck extends React.Component {
     return (
       <>
         <button onClick={this.updateTimeCount}>
-          Update Child Comp {this.state.currentTime}
+          Update Child Comp {this.state.currentTime.val}
         </button>
-        <ShouldCompCheck count={this.state.currentTime} />
+        <ShouldCompCheck data={this.state.data} elem={<Header />} nodeT={[1,2,3]}/>
       </>
     );
   }
