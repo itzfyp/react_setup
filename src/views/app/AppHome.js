@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import DidMountCheck from "../../components/DidMountCheck";
 
 const styles = theme => ({
   root: {
@@ -16,16 +17,16 @@ const AppHome = props => {
   const { classes } = props;
 
   return (
-    <div>
+    <>
       <Paper className={classes.root} elevation={1}>
         <Typography variant="h5" component="h3">
           Welocme To Home Page
         </Typography>
-        <Typography component="p">
-          A React web Application.
+        <Typography component="div">
+          <DidMountCheck />
         </Typography>
       </Paper>
-    </div>
+    </>
   );
 };
 
