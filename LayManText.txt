@@ -1,0 +1,67 @@
+what is JSX
+
+  JSX is an syntax eXtention which allows to write XML like syntax along with Javascript features in components.
+
+  - provides elagent way to write code 
+  - developers can understand the code in less time
+  - easy to find errors and change codes in feature
+  - provides safe HTML by removing escape charters
+
+what is REACT
+
+  React is a Javascript liberaray used for building user itnerface which will update over time.
+
+  - reusable
+  - easy to debug and test
+  - component based
+  - unidirectional update
+  - using virtual dom
+  - using observable to update state
+
+React Props
+
+  Props are properties of component which are used to pass data to components which will be later Updated in Ui. its the way in react to communicate with child components.
+
+  - its immutable
+  - can pass string / number / bool / func / node / element
+
+
+State
+
+  State is a private feature and strictly blongs to component which allows components to store values inside a component which will be updated in UI.
+
+  - its mutable
+  - setState is the way to update State
+
+
+what is REDUX
+
+  Redux is a Javascript framework for managing and maitianing application state. its single immmutable object which is called store.
+
+  - unidirectional flow
+  - single store object
+  - provides pure functions to update store
+
+what is Virtual DOM
+
+  its an concept where virtual represnetation  of real DOM, which is synced with real DOM. It will be done by ReactDOM. This process called reconciliation.
+
+  In React, virtual DOM associated with React elements since they are object representing the user itnerface.  
+
+what is the New Features available in HTML5
+
+  - Semantcis - allows to describe more precisely what is out content
+  - Storage - allows to store data in browsers
+  - Multimedia - allows to have multimedia object like Video / Audio 
+  - 2D/3D graphisc - allows to create 2D / 3D graphisc using svg / canvas
+  
+
+
+
+
+
+
+
+
+
+

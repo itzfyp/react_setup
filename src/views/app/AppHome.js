@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import DidMountCheck from "../../components/DidMountCheck";
+
 
 const styles = theme => ({
   root: {
@@ -23,7 +23,7 @@ const AppHome = props => {
           Welocme To Home Page
         </Typography>
         <Typography component="div">
-          <DidMountCheck />
+         
         </Typography>
       </Paper>
     </>
