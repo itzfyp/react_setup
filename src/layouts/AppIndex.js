@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import AppHeader from '../views/app/AppHeader';
-import AppHome from '../views/app/AppHome';
-import AppAbout from '../views/app/AppAbout';
+import Home from "./Home";
+import SignIn from '../components/SignIn';
 
 class AppIndex extends Component {
-  
-  render(){
-    return (<React.Fragment>
-        <AppHeader />
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedIn: false
+    };
+    this.authCheck();
+  }
+
+  authCheck = () => {
+    const isLoggedIn = Boolean(localStorage.getItem("isUserAlreadyLogggedIn"));
+    isLoggedIn && this.setState(state => state.isLoggedIn = isLoggedIn);
+  };
+
+  render() {
+    return <React.Fragment>
         <Switch>
-          <Route exact path="/" component={AppHome} />
-          <Route path="/about" component={AppAbout} />
+         
+        <Route exact path="/" component={ this.state.isLoggedIn? Home : SignIn} />
+         
         </Switch>
-      </React.Fragment>);
+      </React.Fragment>;
   }
 }
 
